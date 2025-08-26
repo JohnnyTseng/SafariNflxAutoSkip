@@ -19,10 +19,14 @@
         "type": "module"
     },
 
-    "content_scripts": [{
-        "js": [ "content.js" ],
-        "matches": [ "*://example.com/*" ]
-    }],
+    "content_scripts": [
+        {
+            "matches": ["*://www.netflix.com/*"],
+            "js": ["content.js", "toastify.js"],
+            "css": ["toastify.css"],
+            "run_at": "document_idle"
+        }
+    ],
 
     "action": {
         "default_popup": "popup.html",
